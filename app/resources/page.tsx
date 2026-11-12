@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { pageMetadata } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { officialLinks, site } from "@/lib/site";
 
 export const metadata = pageMetadata(
   "FUL guides",
   "Plain-English guides to Firearm User’s Licence rules in Trinidad and Tobago, kept up to date.",
+  "/resources",
 );
 
 const posts = [
@@ -34,18 +35,55 @@ export default function ResourcesPage() {
         lede="Plain-English guides to the rules, kept up to date."
       />
       <div className="mx-auto max-w-3xl px-4 py-10">
-        <p className="text-sm font-semibold text-neutral-700">Last checked: {site.lastChecked}</p>
+        <p className="text-sm font-semibold text-silver">Last checked: {site.lastChecked}</p>
         <ul className="mt-6 space-y-4">
           {posts.map((post) => (
-            <li key={post.href} className="border border-neutral-200 p-4">
-              <h2 className="font-heading text-2xl">
-                <Link className="underline underline-offset-4" href={post.href}>
+            <li key={post.href}>
+              <Link href={post.href} className="card block p-5 no-underline">
+                <h2 className="font-heading text-2xl text-white underline decoration-red underline-offset-4">
                   {post.title}
-                </Link>
-              </h2>
-              <p className="mt-2">{post.text}</p>
+                </h2>
+                <p className="mt-2 text-silver-light">{post.text}</p>
+              </Link>
             </li>
           ))}
+        </ul>
+        <h2 className="section-title mt-10 text-xl">Official pages</h2>
+        <ul className="mt-6 list-disc space-y-2 pl-5 leading-relaxed">
+          <li>
+            <a className="underline decoration-red underline-offset-4" href={officialLinks.ttpsLicences}>
+              TTPS licences
+            </a>
+          </li>
+          <li>
+            <a
+              className="underline decoration-red underline-offset-4"
+              href={officialLinks.governmentPrintery}
+            >
+              Government Printery
+            </a>
+          </li>
+          <li>
+            <a
+              className="underline decoration-red underline-offset-4"
+              href={officialLinks.certificateOfCharacter}
+            >
+              TTPS Certificate of Character
+            </a>
+          </li>
+          <li>
+            <a
+              className="underline decoration-red underline-offset-4"
+              href={officialLinks.certificateOfCharacterApply}
+            >
+              Apply for a Certificate of Character
+            </a>
+          </li>
+          <li>
+            <a className="underline decoration-red underline-offset-4" href={officialLinks.gazette}>
+              2026 Gazette
+            </a>
+          </li>
         </ul>
       </div>
     </>

@@ -6,6 +6,7 @@ import { site } from "@/lib/site";
 export const metadata = pageMetadata(
   "FUL deadline reminders",
   "Email reminders for the 31 March yearly FUL fee, the 3-year renewal, and documents that expire in Trinidad and Tobago.",
+  "/reminders",
 );
 
 const reminders = [
@@ -24,7 +25,7 @@ export default function RemindersPage() {
         lede="Your yearly fee (due by 31 March), your 3-year renewal, and documents that expire."
       />
       <div className="mx-auto max-w-3xl px-4 py-10">
-        <h2 className="font-heading text-2xl">What we remind you about</h2>
+        <h2 className="section-title text-xl">What we remind you about</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           {reminders.map((item) => (
             <li key={item}>{item}</li>
@@ -35,9 +36,10 @@ export default function RemindersPage() {
           available now. SMS and WhatsApp reminders are coming later.
         </p>
         <p className="mt-3 leading-relaxed">
-          Reminders are free for now. A paid option may be added later. That price is TT$ TBD.
+          Reminders are free for now. A paid option may be added later. That price is still to be
+          confirmed.
         </p>
-        <h2 className="mt-8 font-heading text-2xl">How to stop</h2>
+        <h2 className="section-title mt-8 text-xl">How to stop</h2>
         <p className="mt-3 leading-relaxed">
           Email {site.email} and ask us to stop. We will remove you. We do not ask for a licence
           number or an ID number.

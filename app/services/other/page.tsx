@@ -1,11 +1,13 @@
 import { Ctas } from "@/components/Ctas";
 import { LegalNotes } from "@/components/LegalNotes";
 import { PageHero } from "@/components/PageHero";
+import { priceOnRequest } from "@/lib/fees";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata(
   "FUL variations and permits",
   "Help with FUL variations, duplicate licences, travel permits, and pepper spray permits in Trinidad and Tobago.",
+  "/services/other",
 );
 
 export default function OtherServicesPage() {
@@ -25,7 +27,7 @@ export default function OtherServicesPage() {
           </li>
           <li>A pepper spray permit is TT$200. That is the official fee.</li>
         </ul>
-        <p className="mt-4">Our fee for these jobs is TT$ TBD.</p>
+        <p className="mt-4">{priceOnRequest}</p>
         <LegalNotes />
         <Ctas primaryHref="/book?service=other" primaryLabel="Book a consultation" />
       </div>

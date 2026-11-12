@@ -1,11 +1,13 @@
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { LegalNotes } from "@/components/LegalNotes";
 import { PageHero } from "@/components/PageHero";
+import { priceOnRequest } from "@/lib/fees";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata(
   "Company FUL records",
   "Licence admin and training dates for security firms and cash businesses in Trinidad and Tobago. We do not provide guards.",
+  "/services/business",
 );
 
 export default function BusinessPage() {
@@ -25,8 +27,8 @@ export default function BusinessPage() {
             A protective agency needs permission from the Ministry. We do not grant that permission.
           </li>
         </ul>
-        <p className="mt-4">Our fee for this help is TT$ TBD.</p>
-        <h2 className="mt-8 font-heading text-2xl">Send an enquiry</h2>
+        <p className="mt-4">{priceOnRequest}</p>
+        <h2 className="section-title mt-8 text-xl">Send an enquiry</h2>
         <EnquiryForm />
         <LegalNotes />
       </div>

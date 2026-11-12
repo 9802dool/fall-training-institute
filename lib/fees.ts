@@ -21,21 +21,24 @@ export const officialFees: FeeRow[] = [
   { item: "Certificate of Character", amount: "TT$50" },
 ];
 
+export const priceOnRequest =
+  "Price on request. We will give you a written price before you pay.";
+
 /** FALL prices are not set yet. Do not invent them. */
 export const fallFees: FeeRow[] = [
-  { item: "Consultation", amount: "TT$ TBD" },
-  { item: "File preparation", amount: "TT$ TBD" },
-  { item: "Help booking appointments", amount: "TT$ TBD" },
-  { item: "Passport photos", amount: "TT$ TBD" },
-  { item: "Good-reason evidence folder", amount: "TT$ TBD" },
-  { item: "Interview preparation", amount: "TT$ TBD" },
-  { item: "Provisional licence training", amount: "TT$ TBD" },
-  { item: "Certificate of competence assessment", amount: "TT$ TBD" },
-  { item: "Three-year recertification", amount: "TT$ TBD" },
-  { item: "Safe handling and storage", amount: "TT$ TBD" },
-  { item: "Renewal package", amount: "TT$ TBD" },
-  { item: "Reminders", amount: "Free or TT$ TBD" },
-  { item: "Attorney referral", amount: "TT$ TBD" },
+  { item: "Consultation", amount: "Price on request" },
+  { item: "File preparation", amount: "Price on request" },
+  { item: "Help booking appointments", amount: "Price on request" },
+  { item: "Passport photos", amount: "Price on request" },
+  { item: "Good-reason evidence folder", amount: "Price on request" },
+  { item: "Interview preparation", amount: "Price on request" },
+  { item: "Provisional licence training", amount: "Price on request" },
+  { item: "Certificate of competence assessment", amount: "Price on request" },
+  { item: "Three-year recertification", amount: "Price on request" },
+  { item: "Safe handling and storage", amount: "Price on request" },
+  { item: "Renewal package", amount: "Price on request" },
+  { item: "Reminders", amount: "Free for now" },
+  { item: "Attorney referral", amount: "To be confirmed" },
 ];
 
 export const providerFees: FeeRow[] = [

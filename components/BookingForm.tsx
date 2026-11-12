@@ -4,7 +4,7 @@ import { useActionState, useEffect, useState } from "react";
 import { submitBooking } from "@/app/actions";
 import { idleForm } from "@/lib/forms";
 import { bookingServices } from "@/lib/site";
-import { btn, inputClass, labelClass } from "@/lib/styles";
+import { btn, errorClass, inputClass, labelClass, noticeClass } from "@/lib/styles";
 
 export function BookingForm() {
   const [state, action, pending] = useActionState(submitBooking, idleForm);
@@ -19,7 +19,7 @@ export function BookingForm() {
 
   if (state.status === "success") {
     return (
-      <p className="border border-neutral-200 bg-neutral-50 p-4" role="status">
+      <p className={noticeClass} role="status">
         {state.message}
       </p>
     );
@@ -32,7 +32,7 @@ export function BookingForm() {
         <input id="booking-website" name="company_website" tabIndex={-1} autoComplete="off" />
       </p>
       {state.status === "error" ? (
-        <p className="text-brand" role="alert">
+        <p className={errorClass} role="alert">
           {state.message}
         </p>
       ) : null}
@@ -104,7 +104,7 @@ export function BookingForm() {
           Short note
         </label>
         <textarea className={inputClass} id="booking-note" name="note" rows={4} maxLength={1000} />
-        <p className="mt-1 text-sm text-neutral-700">
+        <p className="mt-1 text-sm text-silver">
           Do not include an ID number, a licence number, or a firearm serial.
         </p>
       </div>

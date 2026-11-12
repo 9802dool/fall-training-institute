@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { priceOnRequest } from "@/lib/fees";
 
 export function ServiceCard({
   title,
   summary,
   href,
-  price = "From TT$ TBD",
+  price = priceOnRequest,
   meta,
   linkLabel = "Learn more",
 }: {
@@ -16,14 +17,14 @@ export function ServiceCard({
   linkLabel?: string;
 }) {
   return (
-    <article className="flex h-full flex-col border border-neutral-200 p-5">
-      <h2 className="font-heading text-2xl text-ink">{title}</h2>
-      {meta ? <p className="mt-2 text-sm text-neutral-700">{meta}</p> : null}
-      <p className="mt-3 flex-1 leading-relaxed text-neutral-800">{summary}</p>
-      <p className="mt-4 font-semibold text-brand">{price}</p>
-      <Link href={href} className="mt-4 font-semibold text-ink underline underline-offset-4">
+    <Link href={href} className="card flex h-full flex-col p-6 no-underline">
+      <h2 className="font-heading text-2xl text-white">{title}</h2>
+      {meta ? <p className="mt-2 text-sm text-silver">{meta}</p> : null}
+      <p className="mt-3 flex-1 leading-relaxed text-silver-light">{summary}</p>
+      <p className="mt-4 font-semibold text-red">{price}</p>
+      <span className="mt-4 font-semibold text-white underline decoration-red underline-offset-4">
         {linkLabel}
-      </Link>
-    </article>
+      </span>
+    </Link>
   );
 }

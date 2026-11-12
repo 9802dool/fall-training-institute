@@ -6,6 +6,7 @@ import { localBusinessJsonLd, site } from "@/lib/site";
 export const metadata = pageMetadata(
   "About F.A.L.L. Training Institute",
   "A Trinidad and Tobago training institute focused on safe, legal firearm ownership. Private help. The Commissioner of Police decides.",
+  "/about",
 );
 
 export default function AboutPage() {
@@ -17,31 +18,37 @@ export default function AboutPage() {
         lede="A Trinidad and Tobago training institute focused on safe, legal firearm ownership."
       />
       <div className="mx-auto max-w-3xl px-4 py-10">
-        <h2 className="font-heading text-2xl">Our story</h2>
-        <p className="mt-3 leading-relaxed">
-          <strong>Simeon to write.</strong> This section will say, in a few sentences, why the
-          institute exists. It will describe how training is taught, with safety first. It will say
-          that clients sign and submit their own applications. It will name the people and the range
-          once those details are confirmed.
+        <h2 className="section-title text-xl">Our story</h2>
+        <p className="mt-6 leading-relaxed">
+          Our story is still being written. It will say why the institute exists, how training is
+          taught with safety first, and that you sign and submit your own application.
         </p>
-        <h2 className="mt-8 font-heading text-2xl">Still to confirm</h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li>Registered business name and number: TBD</li>
-          <li>Instructors: TBD</li>
-          <li>Range: TBD</li>
-          <li>Partners: TBD</li>
-          <li>Address and map: {site.address}</li>
-        </ul>
-        <h2 className="mt-8 font-heading text-2xl">How we work</h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed">
+        <p className="mt-4 leading-relaxed">
+          Our business number, instructors, range, partners, address, and hours are still to be
+          confirmed.
+        </p>
+        <h2 className="section-title mt-10 text-xl">How we work</h2>
+        <ul className="mt-6 list-disc space-y-2 pl-5 leading-relaxed">
           <li>No bribes. We never ask for money to push a file.</li>
           <li>No promises of approval. Only the Commissioner of Police decides.</li>
           <li>A receipt for every payment.</li>
           <li>You sign and you submit.</li>
         </ul>
         <p className="mt-6 leading-relaxed">
-          Phone {site.phones.map((phone) => phone.label).join(" or ")}. Email {site.email}. Hours:{" "}
-          {site.hours}.
+          Phone{" "}
+          {site.phones.map((phone, index) => (
+            <span key={phone.href}>
+              {index > 0 ? " or " : null}
+              <a className="underline decoration-red underline-offset-4" href={phone.href}>
+                {phone.label}
+              </a>
+            </span>
+          ))}
+          . Email{" "}
+          <a className="underline decoration-red underline-offset-4" href={`mailto:${site.email}`}>
+            {site.email}
+          </a>
+          .
         </p>
       </div>
     </>

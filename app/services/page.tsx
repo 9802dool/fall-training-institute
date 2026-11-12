@@ -6,6 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata(
   "FUL paperwork help",
   "What F.A.L.L. Training Institute can help with in Trinidad and Tobago: first licences, renewals, businesses, and estates.",
+  "/services",
 );
 
 const cards = [
@@ -29,6 +30,16 @@ const cards = [
     summary: "A calm way to deal with a firearm after someone has died.",
     href: "/services/estate",
   },
+  {
+    title: "Refused or waiting",
+    summary: "We put the file in order for your attorney. We are not attorneys.",
+    href: "/services/appeals",
+  },
+  {
+    title: "Changes and other permits",
+    summary: "Variations, duplicates, travel permits, and pepper spray permits.",
+    href: "/services/other",
+  },
 ];
 
 export default function ServicesPage() {
@@ -44,17 +55,15 @@ export default function ServicesPage() {
             <ServiceCard key={card.href} {...card} />
           ))}
         </div>
-        <h2 className="mt-10 font-heading text-2xl">What we don’t do</h2>
-        <ul className="mt-3 max-w-3xl list-disc space-y-2 pl-5 leading-relaxed">
+        <h2 className="section-title mt-10 text-xl">What we don’t do</h2>
+        <ul className="mt-6 max-w-3xl list-disc space-y-2 pl-5 leading-relaxed">
           <li>We don’t sell guns or ammunition.</li>
           <li>We don’t process or approve licences.</li>
-          <li>We don’t give legal advice. Our partner attorney does. The attorney’s name is TBD.</li>
+          <li>
+            We don’t give legal advice. An attorney does. We will name our partner attorney once
+            confirmed.
+          </li>
         </ul>
-        <p className="mt-6 max-w-3xl leading-relaxed">
-          Smaller jobs, such as a variation, a duplicate, travel, or a pepper spray permit, are on
-          the <a className="underline" href="/services/other">other permits page</a>. If you were
-          refused, see <a className="underline" href="/services/appeals">appeals</a>.
-        </p>
         <Ctas primaryHref="/book" primaryLabel="Book a consultation" />
       </div>
     </>

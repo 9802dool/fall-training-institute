@@ -3,14 +3,14 @@
 import { useActionState } from "react";
 import { submitReminder } from "@/app/actions";
 import { idleForm } from "@/lib/forms";
-import { inputClass, labelClass, btn } from "@/lib/styles";
+import { btn, errorClass, inputClass, labelClass, noticeClass } from "@/lib/styles";
 
 export function ReminderForm() {
   const [state, action, pending] = useActionState(submitReminder, idleForm);
 
   if (state.status === "success") {
     return (
-      <p className="border border-neutral-200 bg-neutral-50 p-4" role="status">
+      <p className={noticeClass} role="status">
         {state.message}
       </p>
     );
@@ -20,7 +20,7 @@ export function ReminderForm() {
     <form action={action} className="space-y-4" noValidate>
       <Honeypot />
       {state.status === "error" ? (
-        <p className="text-brand" role="alert">
+        <p className={errorClass} role="alert">
           {state.message}
         </p>
       ) : null}

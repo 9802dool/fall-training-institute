@@ -7,6 +7,7 @@ import { officialLinks, site } from "@/lib/site";
 export const metadata = pageMetadata(
   "Provisional firearm licence",
   "What a provisional Firearm User’s Licence lets you do in Trinidad and Tobago, and what it does not.",
+  "/resources/provisional-licence",
 );
 
 export default function ProvisionalGuidePage() {
@@ -17,7 +18,7 @@ export default function ProvisionalGuidePage() {
         lede="It is the first step. It is for training, and only for a short time."
       />
       <article className="mx-auto max-w-3xl px-4 py-10">
-        <p className="text-sm font-semibold text-neutral-700">Last checked: {site.lastChecked}</p>
+        <p className="text-sm font-semibold text-silver">Last checked: {site.lastChecked}</p>
         <p className="mt-4 leading-relaxed">
           A provisional licence lasts 2 months. You may train only at the range named on it. An FUL
           holder must supervise you. It is not a full Firearm User’s Licence.
@@ -29,7 +30,7 @@ export default function ProvisionalGuidePage() {
           </a>
           . Ask for the current form. Do not rely on an old form number.
         </p>
-        <h2 className="mt-8 font-heading text-2xl">Papers for this step</h2>
+        <h2 className="section-title mt-8 text-xl">Papers for this step</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           {stage1Items.map((item) => (
             <li key={item}>{item}</li>

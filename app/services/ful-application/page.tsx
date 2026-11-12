@@ -1,11 +1,13 @@
 import { Ctas } from "@/components/Ctas";
 import { LegalNotes } from "@/components/LegalNotes";
 import { PageHero } from "@/components/PageHero";
+import { priceOnRequest } from "@/lib/fees";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata(
   "First FUL application Trinidad",
   "Help getting every document right for a first Firearm User’s Licence in Trinidad and Tobago. You sign and you submit.",
+  "/services/ful-application",
 );
 
 const included = [
@@ -28,23 +30,23 @@ export default function FulApplicationPage() {
       />
       <div className="mx-auto max-w-3xl px-4 py-10">
         <p className="leading-relaxed">This help is for first-time applicants who are 25 or older.</p>
-        <h2 className="mt-8 font-heading text-2xl">Stage 1: provisional licence</h2>
+        <h2 className="section-title mt-8 text-xl">Stage 1: provisional licence</h2>
         <p className="mt-3 leading-relaxed">
           A provisional licence lasts 2 months. It is for training only, at the range named on it,
           supervised by an FUL holder.
         </p>
-        <h2 className="mt-8 font-heading text-2xl">Stage 2: full FUL</h2>
+        <h2 className="section-title mt-8 text-xl">Stage 2: full FUL</h2>
         <p className="mt-3 leading-relaxed">
           The full licence needs a certificate of competence from a licensed firearms instructor.
         </p>
-        <h2 className="mt-8 font-heading text-2xl">What is included</h2>
+        <h2 className="section-title mt-8 text-xl">What is included</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           {included.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
         <p className="mt-4 leading-relaxed">
-          The FALL fee is TT$ TBD. Official fees, the doctor’s fee, and the psych fee are paid to
+          {priceOnRequest} Official fees, the doctor’s fee, and the psych fee are paid to
           those providers.
         </p>
         <p className="mt-4 leading-relaxed">

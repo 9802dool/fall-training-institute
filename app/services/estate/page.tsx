@@ -1,11 +1,13 @@
 import { Ctas } from "@/components/Ctas";
 import { LegalNotes } from "@/components/LegalNotes";
 import { PageHero } from "@/components/PageHero";
+import { priceOnRequest } from "@/lib/fees";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata(
   "Firearm after a death",
   "Help for a family in Trinidad and Tobago after the death of a firearm owner. The executor, the police, and an attorney each have a role.",
+  "/services/estate",
 );
 
 export default function EstatePage() {
@@ -28,7 +30,7 @@ export default function EstatePage() {
         </ul>
         <p className="mt-4 leading-relaxed">
           We work with the executor and with an attorney. We do not take the firearm. We do not
-          decide who inherits it. Our fee is TT$ TBD.
+          decide who inherits it. {priceOnRequest}
         </p>
         <LegalNotes />
         <Ctas primaryHref="/book?service=estate" primaryLabel="Book a consultation" />

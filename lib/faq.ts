@@ -38,7 +38,7 @@ export const faqs: FaqItem[] = [
     id: "competence",
     question: "Who signs my certificate of competence?",
     answer:
-      "A licensed firearms instructor. Ours are [names TBD].",
+      "A licensed firearms instructor. We will name ours here once confirmed.",
   },
   {
     id: "renew",

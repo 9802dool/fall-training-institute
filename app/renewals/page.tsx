@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { RenewalDateHelper } from "@/components/RenewalDateHelper";
+import { priceOnRequest } from "@/lib/fees";
 import { pageMetadata } from "@/lib/seo";
 import { officialLinks } from "@/lib/site";
 import { btn } from "@/lib/styles";
@@ -8,6 +9,7 @@ import { btn } from "@/lib/styles";
 export const metadata = pageMetadata(
   "FUL renewal Trinidad",
   "FUL renewal Trinidad without the last-minute rush. Competence test, medical, and forms for the 3-year renewal.",
+  "/renewals",
 );
 
 export default function RenewalsPage() {
@@ -23,7 +25,7 @@ export default function RenewalsPage() {
           Court ruling said they had not expired. Talk to an attorney about that ruling. The yearly
           fee still applies.
         </p>
-        <h2 className="mt-8 font-heading text-2xl">What the renewal needs</h2>
+        <h2 className="section-title mt-8 text-xl">What the renewal needs</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed">
           <li>
             Renewal form. We believe this is FUL Form 1 from the{" "}
@@ -37,13 +39,13 @@ export default function RenewalsPage() {
           <li>TT$1,000 renewal fee, plus the yearly fee.</li>
         </ul>
         <RenewalDateHelper />
-        <h2 className="mt-8 font-heading text-2xl">Renewal package</h2>
-        <p className="mt-3 leading-relaxed">
+        <h2 className="section-title mt-8 text-xl">Renewal package</h2>
+        <p className="mt-6 leading-relaxed">
           We can book the competence test, book the medical, help with the form from your own facts,
-          and file your receipts. The FALL fee is TT$ TBD. Official fees and the doctor’s fee are
-          paid to them.
+          and file your receipts. {priceOnRequest} Official fees and the doctor’s fee are paid to
+          them.
         </p>
-        <p className="mt-4 border-l-4 border-brand py-1 pl-4 leading-relaxed">
+        <p className="mt-4 border-l-4 border-red py-1 pl-4 leading-relaxed">
           Keeping a firearm on an expired licence can be treated as having it without a licence. If
           your licence has lapsed, act now and get advice from an attorney.
         </p>

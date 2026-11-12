@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { whatsappHref } from "@/lib/site";
+import { site, whatsappHref } from "@/lib/site";
 import { btn, btnSecondary } from "@/lib/styles";
 
 export function Ctas({
@@ -11,16 +11,22 @@ export function Ctas({
   primaryLabel: string;
   showWhatsApp?: boolean;
 }) {
+  const whatsapp = showWhatsApp ? whatsappHref() : null;
+
   return (
     <div className="no-print mt-8 flex flex-col gap-3 sm:flex-row">
       <Link className={btn} href={primaryHref}>
         {primaryLabel}
       </Link>
-      {showWhatsApp ? (
-        <a className={btnSecondary} href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+      {whatsapp ? (
+        <a className={btnSecondary} href={whatsapp} target="_blank" rel="noopener noreferrer">
           WhatsApp us
         </a>
-      ) : null}
+      ) : (
+        <a className={btnSecondary} href={site.phones[0].href}>
+          Call us
+        </a>
+      )}
     </div>
   );
 }

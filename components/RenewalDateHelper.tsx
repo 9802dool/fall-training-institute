@@ -31,11 +31,11 @@ export function RenewalDateHelper() {
 
   return (
     <form
-      className="mt-6 border border-neutral-200 p-5"
+      className="card mt-6 p-5"
       onSubmit={(event) => event.preventDefault()}
     >
-      <h2 className="font-heading text-2xl">When is my renewal due?</h2>
-      <p className="mt-2 text-sm text-neutral-700">
+      <h2 className="section-title text-lg">When is my renewal due?</h2>
+      <p className="mt-4 text-sm text-silver">
         This stays on your device. We do not save the date.
       </p>
       <div className="mt-4">

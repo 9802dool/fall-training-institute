@@ -6,17 +6,18 @@ export const site = {
     { label: "788-FALL (3255)", href: "tel:+18687883255" },
     { label: "766-5078", href: "tel:+18687665078" },
   ],
-  // TODO: replace with the confirmed WhatsApp number. Digits only, country code included.
-  whatsappNumber: "1868XXXXXXXX",
+  // Digits only, with the country code. Leave empty until the number is confirmed.
+  whatsappNumber: "",
   whatsappPrefill: "Hi FALL, I’d like to book a consultation.",
-  address: "TBD",
-  hours: "TBD",
   lastChecked: "November 2026",
 } as const;
+
+export const logoAlt = "F.A.L.L. Training Institute — Firearms Locked And Loaded";
 
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export function whatsappHref(text: string = site.whatsappPrefill) {
+  if (!/^[1-9]\d{9,14}$/.test(site.whatsappNumber)) return null;
   return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(text)}`;
 }
 
@@ -41,8 +42,10 @@ export const officialLinks = {
   ttpsHome: "https://www.ttps.gov.tt/",
   certificateOfCharacter: "https://www.ttps.gov.tt/services/certificates/",
   certificateOfCharacterApply: "https://services.ttps.gov.tt/coc/",
-  governmentPrintery: "https://www.moc.gov.tt/government-printery/",
-  gazette: "https://printery.gov.tt/e-gazette/",
+  governmentPrintery: "https://www.printery.gov.tt/",
+  gazette: "https://www.printery.gov.tt/e-gazette/2026/Gazette/",
+  legalNotice489:
+    "https://papers.ttparliament.org/wp-content/uploads/2026/01/The-Firearms-Amendment-Regulations-2025.pdf",
 } as const;
 
 export const bookingServices = [

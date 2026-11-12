@@ -6,6 +6,7 @@ import { officialLinks, site } from "@/lib/site";
 export const metadata = pageMetadata(
   "FUL renewal checklist",
   "A plain checklist for renewing a Firearm User’s Licence in Trinidad and Tobago, including licences issued before 31 May 2004.",
+  "/resources/ful-renewal-checklist",
 );
 
 const items = [
@@ -23,7 +24,7 @@ export default function RenewalGuidePage() {
         lede="Use this before the date, not the week the licence runs out."
       />
       <article className="mx-auto max-w-3xl px-4 py-10">
-        <p className="text-sm font-semibold text-neutral-700">Last checked: {site.lastChecked}</p>
+        <p className="text-sm font-semibold text-silver">Last checked: {site.lastChecked}</p>
         <p className="mt-4 leading-relaxed">
           Licences issued after 31 May 2004 run for 3 years. For earlier licences, a March 2025 High
           Court ruling said they had not expired. Talk to an attorney before you treat an older
@@ -57,7 +58,11 @@ export default function RenewalGuidePage() {
           <a className="underline" href={officialLinks.ttpsLicences}>
             TTPS licences
           </a>
-          ; Legal Notice 489 of 2025.
+          ;{" "}
+          <a className="underline decoration-red underline-offset-4" href={officialLinks.legalNotice489}>
+            Legal Notice 489 of 2025
+          </a>
+          .
         </p>
       </article>
     </>

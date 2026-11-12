@@ -72,8 +72,8 @@ export function Quiz() {
   }
 
   return (
-    <div className="border border-neutral-200 p-5 sm:p-6">
-      <p className="text-sm text-neutral-700">
+    <div className="card p-5 sm:p-6">
+      <p className="text-sm text-silver">
         Your answers stay on this device. We do not save them.
       </p>
       {outcome ? (
@@ -82,10 +82,10 @@ export function Quiz() {
         </div>
       ) : (
         <div className="mt-4" aria-live="polite">
-          <p className="text-sm font-semibold text-brand">
+          <p className="text-sm font-semibold text-red">
             Question {step + 1} of {steps.length}
           </p>
-          <h2 className="mt-2 font-heading text-2xl text-ink">{current.prompt}</h2>
+          <h2 className="mt-2 font-heading text-2xl text-white">{current.prompt}</h2>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             {current.options.map((option) => (
               <button key={option.label} type="button" className={btn} onClick={() => choose(option)}>
@@ -150,7 +150,7 @@ function Outcome({ id }: { id: OutcomeId }) {
         </h2>
         <p className="mt-3 leading-relaxed">
           A restricted person needs permission from the President before a licence can be considered.
-          We are not attorneys. We can refer you. Our partner attorney’s name is TBD.
+          We are not attorneys. We can refer you. Our partner attorney’s name is still to be confirmed.
         </p>
         <Link className={`${btnSecondary} mt-5`} href="/book?service=consultation">
           Book a consultation

@@ -9,6 +9,7 @@ import { btn } from "@/lib/styles";
 export const metadata = pageMetadata(
   "FUL requirements 2026",
   "FUL requirements 2026 for Trinidad and Tobago. A plain checklist from the Firearms Act and TTPS notices. Last checked November 2026.",
+  "/ful-requirements",
 );
 
 export default function RequirementsPage() {
@@ -19,8 +20,8 @@ export default function RequirementsPage() {
         lede="Based on the Firearms Act and TTPS notices. Rules can change, so check with the TTPS Firearms Section before you submit."
       />
       <div className="mx-auto max-w-3xl px-4 py-10">
-        <p className="text-sm font-semibold text-neutral-700">Last checked: {site.lastChecked}</p>
-        <h2 className="mt-8 font-heading text-2xl">Who can apply</h2>
+        <p className="text-sm font-semibold text-silver">Last checked: {site.lastChecked}</p>
+        <h2 className="section-title mt-8 text-xl">Who can apply</h2>
         <p className="mt-3 leading-relaxed">
           You must be 25 or older. You need a good reason. The Commissioner of Police must believe
           you are fit to hold a licence.
@@ -37,7 +38,7 @@ export default function RequirementsPage() {
           records are weighed by the Commissioner.
         </p>
 
-        <h2 className="mt-8 font-heading text-2xl">Stage 1: provisional licence</h2>
+        <h2 className="section-title mt-8 text-xl">Stage 1: provisional licence</h2>
         <p className="mt-3 leading-relaxed">
           Get the application form from the{" "}
           <a className="underline" href={officialLinks.governmentPrintery}>
@@ -47,14 +48,14 @@ export default function RequirementsPage() {
         </p>
         <CheckList items={stage1Items} />
 
-        <h2 className="mt-8 font-heading text-2xl">Stage 2: Firearm User’s Licence</h2>
+        <h2 className="section-title mt-8 text-xl">Stage 2: Firearm User’s Licence</h2>
         <p className="mt-3 leading-relaxed">
           The FUL form comes from the TTPS Firearms Section. A licensed firearms instructor signs the
           certificate of competence.
         </p>
         <CheckList items={stage2Items} />
 
-        <h2 className="mt-8 font-heading text-2xl">Also asked for by the TTPS (June 2025)</h2>
+        <h2 className="section-title mt-8 text-xl">Also asked for by the TTPS (June 2025)</h2>
         <CheckList items={ttpsAlsoAsks} />
         <p className="mt-3 text-sm leading-relaxed">
           Apply for a Certificate of Character on the{" "}
@@ -68,7 +69,7 @@ export default function RequirementsPage() {
           .
         </p>
 
-        <h2 className="mt-8 font-heading text-2xl">FALL also asks for</h2>
+        <h2 className="section-title mt-8 text-xl">FALL also asks for</h2>
         <p className="mt-3 leading-relaxed">
           These items are not official unless the TTPS confirms them. We ask for them so your file is
           easier to follow.

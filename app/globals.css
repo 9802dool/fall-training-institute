@@ -1,23 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
+  --background: #050505;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-ink: #111111;
-  --color-paper: #ffffff;
-  --color-brand: #c41e3a;
+  --color-black-deep: #050505;
+  --color-black: #0b0b0b;
+  --color-red: #e92435;
+  --color-red-deep: #dc030c;
+  --color-red-dark: #971d1c;
+  --color-silver-light: #e5e5e5;
+  --color-silver: #9a9a9a;
+  --color-white: #ffffff;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: #ffffff;
-  color: #111111;
+  background: #050505;
+  color: #ffffff;
 }
 
 h1,
@@ -25,16 +30,91 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading), sans-serif;
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
 }
 
 :focus-visible {
-  outline: 2px solid #111111;
-  outline-offset: 2px;
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
 }
 
-header :focus-visible,
-footer :focus-visible {
-  outline-color: #ffffff;
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #e92435;
+  outline-offset: 3px;
+}
+
+input,
+select,
+textarea {
+  color-scheme: dark;
+}
+
+.stripe-edge {
+  height: 16px;
+  background: repeating-linear-gradient(-28deg, #e92435 0 12px, #050505 12px 20px);
+}
+
+.hero-wash {
+  background:
+    radial-gradient(920px 460px at 12% 0%, rgba(151, 29, 28, 0.55), transparent 62%),
+    linear-gradient(180deg, #0b0b0b 0%, #050505 100%);
+}
+
+.section-title {
+  display: inline-block;
+  max-width: calc(100% - 28px);
+  margin-right: 14px;
+  margin-left: 14px;
+  background: linear-gradient(100deg, #9a9a9a 0%, #e5e5e5 42%, #f4f4f4 50%, #e5e5e5 58%, #9a9a9a 100%);
+  color: #050505;
+  padding: 0.5rem 1.15rem;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 14px;
+  height: 100%;
+  background: #e92435;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+.section-title::before {
+  left: -14px;
+}
+
+.section-title::after {
+  right: -14px;
+  transform: scaleX(-1);
+}
+
+.card {
+  background: #0b0b0b;
+  border: 1px solid rgba(229, 229, 229, 0.28);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+a.card:hover {
+  transform: translateY(-3px);
+  border-color: #e92435;
+  box-shadow: 0 18px 44px rgba(233, 36, 53, 0.18);
 }
 
 .print-checks {
@@ -56,7 +136,7 @@ footer :focus-visible {
   width: 0.95rem;
   height: 0.95rem;
   margin-top: 0.2rem;
-  border: 1.5px solid #111111;
+  border: 1.5px solid #ffffff;
 }
 
 @media print {
@@ -64,9 +144,22 @@ footer :focus-visible {
     display: none !important;
   }
 
-  body {
-    background: white;
-    color: black;
+  body,
+  main {
+    background: white !important;
+    color: black !important;
+  }
+
+  .card,
+  .hero-wash,
+  .section-title {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  .print-checks li::before {
+    border-color: #111111;
   }
 
   main {

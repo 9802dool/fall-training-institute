@@ -1,6 +1,6 @@
 export function LegalNotes() {
   return (
-    <aside className="mt-8 border-l-4 border-brand bg-neutral-50 px-4 py-4 text-sm leading-relaxed text-neutral-800">
+    <aside className="mt-8 border-l-4 border-red bg-black px-4 py-4 text-sm leading-relaxed text-silver-light">
       <p>You sign and you submit. Only the TTPS and the Commissioner of Police approve licences.</p>
       <p className="mt-2">
         We cannot speed up, influence or guarantee any decision, and we will never ask for money to

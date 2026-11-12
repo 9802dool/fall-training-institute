@@ -3,14 +3,14 @@
 import { useActionState } from "react";
 import { submitEnquiry } from "@/app/actions";
 import { idleForm } from "@/lib/forms";
-import { btn, inputClass, labelClass } from "@/lib/styles";
+import { btn, errorClass, inputClass, labelClass, noticeClass } from "@/lib/styles";
 
 export function EnquiryForm() {
   const [state, action, pending] = useActionState(submitEnquiry, idleForm);
 
   if (state.status === "success") {
     return (
-      <p className="border border-neutral-200 bg-neutral-50 p-4" role="status">
+      <p className={noticeClass} role="status">
         {state.message}
       </p>
     );
@@ -23,7 +23,7 @@ export function EnquiryForm() {
         <input id="enquiry-website" name="company_website" tabIndex={-1} autoComplete="off" />
       </p>
       {state.status === "error" ? (
-        <p className="text-brand" role="alert">
+        <p className={errorClass} role="alert">
           {state.message}
         </p>
       ) : null}
@@ -69,7 +69,7 @@ export function EnquiryForm() {
           inputMode="numeric"
           required
         />
-        <p className="mt-1 text-sm text-neutral-700">
+        <p className="mt-1 text-sm text-silver">
           A count is enough. Do not send ID numbers, licence numbers, or firearm serials.
         </p>
       </div>

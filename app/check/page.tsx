@@ -5,6 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata(
   "FUL eligibility check",
   "A one-minute guide to whether you can apply for an FUL in Trinidad and Tobago. Only the Commissioner of Police decides.",
+  "/check",
 );
 
 export default function CheckPage() {

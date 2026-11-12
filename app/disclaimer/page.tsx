@@ -5,6 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata(
   "Disclaimer",
   "F.A.L.L. Training Institute is a private training and document-preparation business. It is not part of the TTPS.",
+  "/disclaimer",
 );
 
 export default function DisclaimerPage() {
